@@ -1,0 +1,14 @@
+--CONNECT SYS/baza
+
+DROP USER SYSBIL CASCADE;
+CREATE USER SYSBIL IDENTIFIED BY BilPass;
+GRANT DBA TO SYSBIL WITH ADMIN OPTION;
+GRANT AQ_ADMINISTRATOR_ROLE TO SYSBIL WITH ADMIN OPTION;
+GRANT ALL PRIVILEGES TO SYSBIL WITH ADMIN OPTION;
+GRANT execute on utl_file to SYSBIL with grant option;
+CREATE OR replace view xkrbmsft as select * from sys.x$krbmsft;
+GRANT select on xkrbmsft to SYSBIL WITH GRANT option;
+--CREATE OR replace synonym SYSBIL.x$krbmsft for sys.xkrbmsft; 
+GRANT select ON dba_directories TO SYSBIL;
+GRANT execute ON DBMS_BACKUP_RESTORE TO SYSBIL;
+DISCONNECT;

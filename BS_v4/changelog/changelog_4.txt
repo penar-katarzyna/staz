@@ -1,0 +1,123 @@
+﻿--------------------------------------------------------------------------------------------------
+---------------------EasyBilling System v1 30.07--------------------------------------------------
+--------------------------------------------------------------------------------------------------
+-FUNKCJONALNOŚCI 
+-import zdarzeń od systemu obsługującego płatności 
+-tworzenie własnej wersji użytkownika SYSTEM 
+-dodawanie PŁATNOŚCI, FAKTUR, ROZLICZEŃ, 
+
+
+WSZYSCY:
+-opracowanie sposobu przechowywania i naliczania opłat w roamingu
+-ustalenie sposobu obsługi zdarzeń z innych systemów i eksportu danych z EB
+-rozbudowa struktury bazy danych
+-dodanie nowych rodzajów zdarzeń i opracowanie sposobów ich obsługi
+-opracowanie formy gotowego produktu 
+
+Katarzyna Penar:
+- obsługa zdarzeń z systemu obsługującego płatności (parser)
+- rozwój prasera obsługującego zdarzenia od operatora
+- dodawanie faktur, rozliczeń, płatności i sprawdzanie ich poprawności
+- skrypt tworzący użytkowników i przyznający im odpowiednie prawa 
+- eksport danych do systemów zewnętrznych 
+- dodawanie identyfikatora
+
+Paweł Jałocha:
+-Dodawanie taryf
+-Dodawanie usług
+-Przypisanie usług do konkretnych taryf
+-Definiowanie czasu dostępności wybranych taryf w danych miejscach
+-Test Funkcjonalności wypełniający bazę przykładowymi danymi
+
+Karol Gancarczyk:
+- dostosowanie generatora zdarzeń operatorskich do zmian w parserze
+- prace nad generatorem zdarzeń związanych z płatnościami
+
+Jarosław Wierzchowski:
+-Widoki: DOSTEPNOSC_TARYFY, FAKTURA, IDENTYFIKATOR, JEDNOSTKA, KLIENT, KLIENT_BIZNESOWY, KOD, KRAJ_PREFIX, KRAJ, MIASTO, PLATNOSC, PREFIX, REGION, REGULY, ROZLICZENIE, SKALOWANIE, STAWKA, STREFA, SZABLON_FAKTURY, TARYFA, TARYFA_KLIENTA, TARYFA_USLUGA, UMOWA, USLUGA, USLUGA_KLIENTA, WYMIANA
+-edycja klientów (biznesowy i zwykły oddzielnie) z zapisywaniem historii zmian w kluczach obcych(aby można było wydobyć informacje o danym kliencie wstecz)
+
+
+--------------------------------------------------------------------------------------------------
+---------------------EasyBilling System v1 23.07--------------------------------------------------
+--------------------------------------------------------------------------------------------------
+-FUNKCJONALNOŚCI 
+-dodatkowa struktura tabel pomocniczych( REGULY, SIATKA itd)
+-import zdarzeń od operatora z pliku do odpowiedniej tabeli 
+-dodawanie PREFIXÓW TYPÓW URZĄDZEŃ ORAZ ZDARZEŃ
+
+
+WSZYSCY:
+-opracowanie struktury i hierarchii taryf i usług, sposób wykupienia oraz naliczanie
+-ustalenie numeracji i typów zdarzeń od operatora
+-ustalenie reguł dotyczących naliczania roamingowego. 
+
+Katarzyna Penar:
+- poprawa i waliadacja wczytywanych danych w parserze oraz wstawianie danych do tabel
+- uzupełnianie niepełnych danych oraz dodawanie nowych danych od operatora do systemu
+- pełna obsługa plików od operatora 
+- dodawanie faktur
+- dodawanie identyfikatorów
+
+Paweł Jałocha:
+-szkielet tabel pomocniczych (REGULY IATKA)
+-skrypt wypełniający bazę danych przykładowymi wpisami z typami urządzeń i zdarzeń 
+-Funkcjonalność dodawania taryf
+-walidacja email w dodawaniu klientów
+
+Karol Gancarczyk:
+- uzupełnianie tabeli "wymiany"
+- uzupełnianie tabeli "jednostki"
+- uzupełnianie tabeli "skalowanie"
+- poprawki w generatorze plików ze zdarzeniami od operatora
+
+Jarosław Wierzchowski:
+-poprawki dodawania prefiksu, dane wejsciowe kraju, zmiana parametrow(bo tabele sie zmienily)
+-dodawanie klienta, dodawanie klienta biznesowego
+-dodawanie typow urzadzen, typow zdarzen
+-widoki obu  typow
+-kary widok i dodawanie
+-odsetki dodawanie, widok
+-poprawki dodawania obu klientów z walidacją za pomocą wyrażen regularnych dat utworzenia i zakonczenia(porównanie dat, poprawny format samej daty - w przypadku błędu wyświetla odpowieni komunikat)
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
+---------------------EasyBilling System v1 16.07--------------------------------------------------
+--------------------------------------------------------------------------------------------------
+-FUNKCJONALNOŚCI 
+-podstawowa struktura tabel( KLIENT KOD TARYFA USLUGA ZDARZENIE FAKTURA itd)
+-import zdarzeń od operatora z pliku
+-dodawanie miejsc (KRAJ - REGION - MIASTO - KOD)
+
+WSZYSCY:
+-projekt ERD
+-schemat przepływu danych
+-podstawowa logika biznesowa
+-opracowanie struktury plików wejściowych ze zdarzeniami od operatora
+
+Katarzyna Penar:
+-parser wczytujący pliki od operatora
+-automatyczne sekwencje i trigery do tabel
+-
+
+Paweł Jałocha:
+-szkielet bazy danych
+-skrypt wypełniający bazę danych przykładowymi wpisami
+-widok KRAJ_REGION_MIASTO_KOD
+
+Karol Gancarczyk:
+-przygotowanie przykładowych plików wejściowych ze zdarzeniami od operatora
+
+Jarosław Wierzchowski:
+-procedury dodawania miejsc (KRAJ - REGION - MIASTO - KOD)(poźniej zmienione na funkcje)
+-dodawanie prefiksów 
+-widok kraj_prefix
+
+
+
+
+
+
