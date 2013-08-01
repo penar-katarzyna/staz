@@ -27,3 +27,6 @@ Utworzyæ katalogi:
 
 
 Wrzucaæ pliki .dat od operatora do katalogu operator.
+
+
+--test
